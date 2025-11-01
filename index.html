@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashed Swar - Artist</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&family=Scheherazade+New:wght@400;700&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">راشد سوار</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="gallery.html" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About" data-ar="عن الفنان">About</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                <li><button class="lang-btn" id="langToggle">العربية</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Rashed Swar" data-ar="راشد سوار">Rashed Swar</h1>
+                <p class="hero-subtitle" data-en="Bahraini Artist & Painter" data-ar="فنان ورسام بحريني">Bahraini Artist & Painter</p>
+                <p class="hero-description" data-en="Exploring the intersection of tradition and modernity through vibrant brushstrokes and timeless compositions." data-ar="استكشاف تقاطع التراث والحداثة من خلال ضربات الفرشاة النابضة بالحياة والتراكيب الخالدة.">Exploring the intersection of tradition and modernity through vibrant brushstrokes and timeless compositions.</p>
+                <a href="gallery.html" class="cta-button" data-en="View Gallery" data-ar="عرض المعرض">View Gallery</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/Screenshot_26-5-2025_193710_.jpeg" alt="Featured artwork by Rashed Swar">
+            </div>
+        </section>
+
+        <section class="featured-videos">
+            <div class="container">
+                <h2 class="section-title" data-en="Artist Introduction" data-ar="تعريف بالفنان">Artist Introduction</h2>
+                <div class="video-container">
+                    <video controls class="artist-video">
+                        <source src="videos/A short video and introduction.MP4" type="video/mp4">
+                        <p data-en="Your browser does not support the video tag." data-ar="متصفحك لا يدعم عرض الفيديو.">Your browser does not support the video tag.</p>
+                    </video>
+                    <div class="video-description">
+                        <h3 data-en="Meet Rashed Swar" data-ar="تعرف على راشد سوار">Meet Rashed Swar</h3>
+                        <p data-en="Watch this introduction video to learn more about the artist's journey and artistic philosophy." data-ar="شاهد هذا الفيديو التعريفي لتتعرف أكثر على رحلة الفنان وفلسفته الفنية.">Watch this introduction video to learn more about the artist's journey and artistic philosophy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-preview">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 data-en="About the Artist" data-ar="عن الفنان">About the Artist</h2>
+                        <p data-en="Rashed Swar was a pioneering Bahraini artist whose career spanned 35 years until his passing in 1986. Known for his emotional brushwork and timeless representations of Bahraini life and culture, his art captured the essence of traditional Middle Eastern heritage." data-ar="راشد سوار كان فناناً بحرينياً رائداً امتدت مسيرته الفنية 35 عاماً حتى وفاته في عام 1986. اشتهر بضربات فرشاته العاطفية وتمثيله الخالد للحياة والثقافة البحرينية، حيث التقطت أعماله جوهر التراث الشرق أوسطي التقليدي.">Rashed Swar was a pioneering Bahraini artist whose career spanned 35 years until his passing in 1986. Known for his emotional brushwork and timeless representations of Bahraini life and culture, his art captured the essence of traditional Middle Eastern heritage.</p>
+                        <a href="about.html" class="learn-more" data-en="Learn More" data-ar="اعرف أكثر">Learn More</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/Screenshot_26-5-2025_193710_.jpeg" alt="Artist portrait">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Rashed Swar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/fade-in.js"></script>
+    <script src="scripts/protection.js"></script>
+    <script src="scripts/language.js"></script>
+</body>
+</html>

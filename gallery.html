@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Rashed Swar</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">راشد سوار</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="gallery.html" class="nav-link active" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About" data-ar="عن الفنان">About</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                <li><button class="lang-btn" id="langToggle">العربية</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="gallery-main">
+        <div class="container">
+            <h1 class="gallery-title" data-en="Art Gallery" data-ar="معرض الفن">Art Gallery</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search paintings..." class="search-input" data-en-placeholder="Search paintings..." data-ar-placeholder="ابحث في اللوحات...">
+            </div>
+            <div id="gallery" class="grid"></div>
+    
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <button class="modal-nav prev" id="prevBtn">&#8249;</button>
+            <button class="modal-nav next" id="nextBtn">&#8250;</button>
+            <img id="modalImage" src="" alt="">
+            <div id="modalTitle" class="modal-title"></div>
+        </div>
+    </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Rashed Swar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/gallery.js"></script>
+    <script src="scripts/protection.js"></script>
+    <script src="scripts/language.js"></script>
+</body>
+</html>

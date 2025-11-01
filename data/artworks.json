@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Eid Happiness",
+        "image": "images/(1)Eid Happiness.JPG",
+        "type": "Cultural Painting",
+        "medium": "Oil on Canvas",
+        "size": "120 × 75 cm"
+    },
+    {
+        "id": 2,
+        "title": "Al Houbara",
+        "image": "images/(2)Al houbara.JPG",
+        "type": "Wildlife Art",
+        "medium": "Oil on Canvas",
+        "size": "50 × 70 cm"
+    },
+    {
+        "id": 3,
+        "title": "Al Halah",
+        "image": "images/(5)Al Halah.JPG",
+        "type": "Traditional Scene",
+        "medium": "Oil on Canvas",
+        "size": "60 × 80 cm"
+    },
+    {
+        "id": 4,
+        "title": "The Boat",
+        "image": "images/The Boat.png",
+        "type": "Maritime Art",
+        "medium": "Oil on Canvas",
+        "size": "70 × 90 cm"
+    },
+    {
+        "id": 5,
+        "title": "Falconry",
+        "image": "images/Falconry.png",
+        "type": "Cultural Heritage",
+        "medium": "Oil on Canvas",
+        "size": "60 × 80 cm"
+    },
+    {
+        "id": 6,
+        "title": "The Diver",
+        "image": "images/The Diver.png",
+        "type": "Maritime Heritage",
+        "medium": "Oil on Canvas",
+        "size": "50 × 70 cm"
+    },
+    {
+        "id": 7,
+        "title": "Motherhood",
+        "image": "images/Motherhood.JPG",
+        "type": "Portrait",
+        "medium": "Oil on Canvas",
+        "size": "40 × 50 cm"
+    },
+    {
+        "id": 8,
+        "title": "Al Khamis Mosque",
+        "image": "images/Al Khamis Mosque.png",
+        "type": "Architecture",
+        "medium": "Watercolor",
+        "size": "50 × 70 cm"
+    },
+    {
+        "id": 9,
+        "title": "The Holy Quran Teacher",
+        "image": "images/The Holy Quran Teacher.png",
+        "type": "Cultural Scene",
+        "medium": "Oil on Canvas",
+        "size": "60 × 80 cm"
+    },
+    {
+        "id": 10,
+        "title": "Shipbuilder",
+        "image": "images/Shipbuilder.png",
+        "type": "Traditional Craft",
+        "medium": "Oil on Canvas",
+        "size": "70 × 90 cm"
+    }
+]

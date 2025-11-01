@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Rashed Swar</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">راشد سوار</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="gallery.html" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+                <li><a href="about.html" class="nav-link active" data-en="About" data-ar="عن الفنان">About</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+
+                <li><button class="lang-btn" id="langToggle">العربية</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="booklet">
+        <div class="pdf-viewer">
+            <iframe src="documents/Rashed_Swar_booklet.pdf#toolbar=0" 
+                    type="application/pdf" 
+                    width="100%" 
+                    height="800px"
+                    title="Rashed Swar Portfolio">
+                <p data-en="Your browser does not support PDF viewing. Please download the portfolio to view it." data-ar="متصفحك لا يدعم عرض ملفات PDF. يرجى تحميل الملف لعرضه.">
+                    <a href="documents/Rashed_Swar_booklet.pdf" download data-en="Download Portfolio" data-ar="تحميل الملف">Download Portfolio</a>
+                </p>
+            </iframe>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Rashed Swar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/fade-in.js"></script>
+    <script src="scripts/protection.js"></script>
+    <script src="scripts/language.js"></script>
+</body>
+</html>

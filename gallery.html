@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Rashed Swar</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/enhanced-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#333333">
+    <meta name="description" content="Explore the timeless artwork of Rashed Swar, a pioneering Bahraini artist whose paintings capture the essence of Middle Eastern heritage and culture.">
 </head>
 <body>
     <nav class="navbar">
@@ -30,13 +33,9 @@
             <div id="gallery" class="grid"></div>
     
     <div id="imageModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <button class="modal-nav prev" id="prevBtn">&#8249;</button>
-            <button class="modal-nav next" id="nextBtn">&#8250;</button>
-            <img id="modalImage" src="" alt="">
-            <div id="modalTitle" class="modal-title"></div>
-        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-content" src="" alt="">
+        <div id="caption" class="caption"></div>
     </div>
         </div>
     </main>
@@ -47,8 +46,6 @@
         </div>
     </footer>
 
-    <script src="scripts/gallery.js"></script>
-    <script src="scripts/protection.js"></script>
-    <script src="scripts/language.js"></script>
+    <script src="scripts/simple-gallery.js"></script>
 </body>
 </html>

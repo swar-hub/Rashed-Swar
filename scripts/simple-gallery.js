@@ -1,4 +1,4 @@
-// Simple gallery to display all images
+// Enhanced gallery with world-class features
 const imageFiles = [
     "(1)Eid Happiness.JPG", "(2)Al houbara.JPG", "(3)District women(neswaan al freej).HEIC", "(5)Al Halah.JPG",
     "3 Piece View.png", "916e92c3-ce39-48f1-abab-a14bcb04c35a.JPG", "A Car.png", "Abstract.png", "Abstract(2).png",
@@ -43,42 +43,96 @@ const imageFiles = [
     "The Woman.png", "Things.png", "Woman Portrait_.png", "Women.png", "Worries.png", "Ya Jarheni.png"
 ];
 
-function displayAllImages() {
+let currentIndex = 0;
+let filteredImages = [...imageFiles];
+
+function displayImages(images = imageFiles) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
     
-    imageFiles.forEach((filename, index) => {
+    images.forEach((filename, index) => {
         const item = document.createElement('div');
-        item.className = 'card';
+        item.className = 'card fade-in';
         item.innerHTML = `
-            <img src="images/${filename}" alt="${filename.replace(/\.[^/.]+$/, '')}" loading="lazy">
+            <img src="images/${filename}" alt="${filename.replace(/\.[^/.]+$/, '')}" loading="lazy" onerror="this.style.display='none'">
             <div class="card-info">
                 <h3 class="card-title">${filename.replace(/\.[^/.]+$/, '').replace(/[()]/g, '').replace(/_/g, ' ')}</h3>
             </div>
         `;
-        item.onclick = () => openModal(`images/${filename}`, filename.replace(/\.[^/.]+$/, ''));
+        item.onclick = () => openModal(images.indexOf(filename), images);
         gallery.appendChild(item);
+        
+        // Trigger fade-in animation
+        setTimeout(() => item.classList.add('show'), index * 50);
     });
 }
 
-function openModal(src, title) {
+function openModal(index, images = filteredImages) {
+    currentIndex = index;
+    filteredImages = images;
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const caption = document.getElementById('caption');
     
+    const filename = images[index];
+    const title = filename.replace(/\.[^/.]+$/, '').replace(/[()]/g, '').replace(/_/g, ' ');
+    
     modal.style.display = 'block';
-    modalImg.src = src;
+    modalImg.src = `images/${filename}`;
     caption.innerHTML = `<h3>${title}</h3>`;
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
     document.getElementById('imageModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+    if (currentIndex < filteredImages.length - 1) {
+        openModal(currentIndex + 1, filteredImages);
+    }
+}
+
+function prevImage() {
+    if (currentIndex > 0) {
+        openModal(currentIndex - 1, filteredImages);
+    }
+}
+
+function searchImages() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = imageFiles.filter(filename => 
+        filename.toLowerCase().includes(searchTerm)
+    );
+    displayImages(filtered);
 }
 
 // Initialize gallery when page loads
-document.addEventListener('DOMContentLoaded', displayAllImages);
+document.addEventListener('DOMContentLoaded', () => {
+    displayImages();
+    
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', searchImages);
+    }
+});
 
-// Close modal when clicking outside image
-document.getElementById('imageModal').onclick = function(event) {
-    if (event.target === this) closeModal();
-}
+// Modal event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.onclick = (e) => { if (e.target === modal) closeModal(); };
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('imageModal');
+    if (modal && modal.style.display === 'block') {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    }
+});

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/enhanced-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <meta name="theme-color" content="#333333">
+
     <meta name="description" content="Explore the timeless artwork of Rashed Swar, a pioneering Bahraini artist whose paintings capture the essence of Middle Eastern heritage and culture.">
 </head>
 <body>
@@ -34,6 +34,8 @@
     
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
+        <button class="modal-nav prev" onclick="prevImage()">&#8249;</button>
+        <button class="modal-nav next" onclick="nextImage()">&#8250;</button>
         <img id="modalImage" class="modal-content" src="" alt="">
         <div id="caption" class="caption"></div>
     </div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rashed Swar</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">راشد سوار</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="gallery.html" class="nav-link" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About" data-ar="عن الفنان">About</a></li>
+                <li><a href="contact.html" class="nav-link active" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                <li><button class="lang-btn" id="langToggle">العربية</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contact contact-main">
+        <h1 class="contact-title" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h1>
+        
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name" data-en="Name" data-ar="الاسم">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject" data-en="Subject" data-ar="الموضوع">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <p data-en="For enquiries about exhibitions, commissions, or purchasing artwork, please don't hesitate to reach out." data-ar="للاستفسارات حول المعارض أو العمولات أو شراء الأعمال الفنية، يرجى عدم التردد في التواصل معنا.">For enquiries about exhibitions, commissions, or purchasing artwork, please don't hesitate to reach out.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Rashed Swar. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/protection.js"></script>
+    <script src="scripts/language.js"></script>
+</body>
+</html>

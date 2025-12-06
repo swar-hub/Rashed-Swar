@@ -42,8 +42,9 @@
             <div class="container">
                 <h2 class="section-title" data-en="Artist Introduction" data-ar="تعريف بالفنان">Artist Introduction</h2>
                 <div class="video-container">
-                    <video controls class="artist-video">
-                        <source src="https://my-grandfather-art-gallery-and-media.s3.me-south-1.amazonaws.com/AWZL8813.MOV" type="video/mp4">
+                    <video controls class="artist-video" preload="metadata" playsinline webkit-playsinline>
+                        <source src="https://my-grandfather-art-gallery-and-media.s3.me-south-1.amazonaws.com/AWZL8813.MOV" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        <source src="https://my-grandfather-art-gallery-and-media.s3.me-south-1.amazonaws.com/AWZL8813.MOV" type="video/quicktime">
                         <p data-en="Your browser does not support the video tag." data-ar="متصفحك لا يدعم عرض الفيديو.">Your browser does not support the video tag.</p>
                     </video>
                     <div class="video-description">
@@ -81,5 +82,6 @@
     <script src="scripts/protection.js"></script>
     <script src="scripts/language.js"></script>
     <script src="scripts/mobile.js"></script>
+    <script src="scripts/video-handler.js"></script>
 </body>
 </html>

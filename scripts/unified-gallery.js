@@ -15,7 +15,7 @@ const ALL_ARTWORKS = [
     'Landscape(7).png', 'Limbo.png', 'LOLO Bird.png', 'Min AlMahd.png', 'Mommy and Son.png',
     'Motherhood.JPG', 'Mountain Houses.png', 'My Friend.png', 'National Day Celebrations.png', 'Noon Letter.png',
     'On The Sea Beach.png', 'Oyster Split.png', 'Part of The Bull Head Statue.png', 'Pottery Vase.png', 'Predation_.png',
-    'Predatory Drawings.png', 'Predatory Drawings(2).png', 'Predatory Drawings(3).png', 'Preparing For Fishing.png', 'Rashed's Mother.png',
+    'Predatory Drawings.png', 'Predatory Drawings(2).png', 'Predatory Drawings(3).png', 'Preparing For Fishing.png', "Rashed's Mother.png",
     'Rocks.png', 'Safi Fish.png', 'Sea View_.png', 'Sheikh Abdulaziz Bin Mohammed.png', 'Shipbuilder Night.png',
     'Shipbuilder.png', 'Side Portrait.png', 'Statue Design.png', 'Statue Design(2).png', 'Statue Design(3).png',
     'Statue Design(4).png', 'Statue Design(5).png', 'Statue design(6).png', 'Statue Design(7).png', 'Still life.png',

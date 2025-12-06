@@ -25,7 +25,7 @@
         <h1 class="contact-title" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h1>
         
         <div class="contact-form">
-            <form>
+            <form action="https://formspree.io/f/xanyqbvk" method="POST" id="contactForm">
                 <div class="form-group">
                     <label for="name" data-en="Name" data-ar="الاسم">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -43,8 +43,10 @@
                 
                 <div class="form-group">
                     <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
+                
+                <div id="formStatus" style="display:none; padding:10px; margin:10px 0; border-radius:5px;"></div>
                 
                 <button type="submit" class="submit-btn" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
             </form>
@@ -63,5 +65,6 @@
     <script src="scripts/polyfills.js"></script>
     <script src="scripts/protection.js"></script>
     <script src="scripts/language.js"></script>
+    <script src="scripts/contact-form.js"></script>
 </body>
 </html>

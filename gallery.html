@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashed Swar | Bahraini Visual Artist</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #ffffff; 
+            color: #222222; 
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        
+        /* Header - Changed to Grid to prevent overlapping */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr; /* 3 invisible columns */
+            align-items: center;
+            background: rgb(1, 1, 15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        /* Language Button - Left Column */
+        .lang-btn {
+            grid-column: 1;
+            justify-self: start;
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 0.4rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: 0.3s;
+            z-index: 102;
+        }
+
+        .lang-btn:hover {
+            background: white;
+            color: navy;
+        }
+
+        
+        .logo {
+            grid-column: 2;
+            justify-self: center;
+            font-family: 'Rakkas', serif;
+            font-size: 2.5rem;
+            color: #ffffff; 
+            text-decoration: none;
+            letter-spacing: 1px;
+            z-index: 102; 
+            white-space: nowrap;
+        }
+
+        
+        .menu-icon {
+            grid-column: 3;
+            justify-self: end;
+            display: none;
+            font-size: 2rem;
+            color: #ffffff;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        
+        nav {
+            grid-column: 3;
+            justify-self: end;
+            display: flex;
+            align-items: center;
+            background: transparent;
+            padding: 0;
+        }
+
+        nav a {
+            color: #e0e0e0; 
+            text-decoration: none;
+            margin: 0;
+            margin-inline-start: 1.5rem; /* Spacing between links */
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #ffffff;
+        }
+
+        nav a:hover, nav a.active {
+            color: #ffffff;
+        }
+
+        
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 6rem 5% 2rem;
+            gap: 2rem;
+        }
+
+        .home-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .home-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: #111111; 
+        }
+
+        .home-content .typing-text {
+            font-size: 1.8rem;
+            color: #555555; 
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .home-content p {
+            font-size: 1.2rem;
+            color: #444444; 
+            line-height: 1.6;
+        }
+
+        .home-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .home-img img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
+        
+        #vr-museum h2 {
+            color: #111111;
+        }
+
+        #vr-museum-container {
+            width: 100%;
+            height: 80vh;
+            background-color: #111;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        
+        /* Responsive Design (Mobile & Tablets) */
+        @media (max-width: 850px) {
+            /* Show Hamburger Menu */
+            .menu-icon {
+                display: block; 
+            }
+
+            /* Turn Navigation into Dropdown */
+            nav {
+                position: absolute;
+                top: 100%; 
+                left: 0;
+                width: 100%;
+                background: rgba(1, 1, 15, 0.192); 
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                display: none; /* Hidden until hamburger is clicked */
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+
+            nav.active {
+                display: flex; 
+            }
+
+            nav a {
+                margin: 1.2rem 0; 
+                margin-inline-start: 0;
+                font-size: 1.5rem;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 8rem;
+            }
+            .home-content h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body dir="ltr">
+    <header>
+        
+        <button class="lang-btn" id="lang-toggle">عربي</button>
+        
+        
+         <a href="#" class="logo" data-ar="راشد سوار">راشد سوار</a>
+        
+        
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        
+        
+        <nav id="nav-menu">
+            <a href="home.html" class="active" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="about.html" data-en="About" data-ar="عن الفنان">About</a>
+            <a href="gallery.html" data-en="Gallery" data-ar="المعرض">Gallery</a>
+            <a href="#vr-museum" data-en="VR Museum" data-ar="المتحف الافتراضي">VR Museum</a>
+            <a href="#" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+        </nav>
+    </header>
+
+    <style>
+        
+        .gallery-section {
+            padding: 8rem 5% 4rem;
+            min-height: 100vh;
+            background-color: #ffffff;
+            color: #222222;
+            text-align: center;
+        }
+
+        .gallery-section h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #111111;
+        }
+
+        
+        .gallery-grid {
+            
+            column-count: 3; 
+            column-gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 2rem; 
+            
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background: transparent; 
+            height: max-content; 
+            line-height: 0;      
+            font-size: 0;
+            overflow: hidden;
+            display: inline-block; 
+            width: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0; 
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .gallery-item img.watermarked {
+            opacity: 1;
+        }
+
+        /* 3. Add this at the bottom of your CSS to make the columns responsive */
+        @media (max-width: 900px) {
+            .gallery-grid {
+                column-count: 2; /* Drops to 2 columns on tablets */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                column-count: 1; 
+            }
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0; 
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .gallery-item img.watermarked {
+            opacity: 1;
+        }
+        
+        
+        .gallery-item img.watermarked {
+            opacity: 1;
+        }
+    </style>
+
+    <section class="gallery-section">
+        <h1>Gallery</h1>
+        
+        <div class="gallery-grid" id="gallery-container"></div>
+
+        
+    </section>
+        
+    </section>
+
+    
+    
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuIcon.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        const langBtn = document.getElementById('lang-toggle');
+        const translatableElements = document.querySelectorAll('[data-en]');
+        let isEnglish = true;
+
+        langBtn.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            
+            if (isEnglish) {
+                document.body.dir = 'ltr';
+                langBtn.textContent = 'عربي';
+                translatableElements.forEach(el => {
+                    el.textContent = el.getAttribute('data-en');
+                });
+            } else {
+                document.body.dir = 'rtl';
+                langBtn.textContent = 'English';
+                translatableElements.forEach(el => {
+                    el.textContent = el.getAttribute('data-ar');
+                });
+            }
+        });
+    </script>
+
+    
+    <script>
+        const galleryContainer = document.getElementById('gallery-container');
+        const folderPath = 'images/';
+        const watermarkText = '© Rashed Swar | rashedswar.com';
+        
+        
+        const imageNames = [
+            "(1)Eid Happiness.JPG",
+            "(2)Al houbara.JPG",
+            "(3)District women(neswaan al freej).HEIC",
+            "(5)Al Halah.JPG",  
+            "3 Piece View.png",
+            "A Car.png",
+            "Abstract(2).png",
+            "Abstract.png",
+            "Abstract(3).png",
+            "Al Budaiya.png",
+            "Al Damah Game.png",
+            "Al Halah.png",
+            "Al Eid.png",
+            "Al houbara.png",            
+            "Al Khalifa.png",
+            "Al Khamis Mosque.png",
+            "Al Nashel.png",,
+            "Allah, Al Watan, Al Ameer.HEIC",
+            "Babco.png",
+            "Back Home.png",
+            "Bahraini and His Horse.png",
+            "Bapco Logo design.png",
+            "Beach Front.png",
+            "Boat.png",
+            "Bullhead.png",
+            "Bwanish(1).png",
+            "Bwanish(2).png",
+            "Bwanish(3).png",
+            "Bwanish(4).png",
+            "Bwanish(5).png",
+            "Bwanish(6).HEIC",
+            "Cactus.png",
+            "Country Horses.png",
+            "Cupping.png",
+            "Delmon Heritage.png",
+            "Design_.png",
+            "Dirwazah.png",
+            "District in Manama.png",
+            "European Countryside.png",
+            "Falconry.png",
+            "Faskara Fish.png",
+            "Female.png",
+            "Fisherman_.png",
+            "Fishing.png",
+            "Foreign Girl.png",
+            "Form.png",
+            "Formation.png",
+            "Freej Gathering.png",
+            "Giveaway.png",
+            "Heritage Abstact.png",
+            "Heritage Design.png",
+            "Hoori_.png",
+            "Horse.png",
+            "Houbara(2).png",
+            "Houbara(3).png",
+            "Houses of The Past.png",
+            "IMG_1078.HEIC",
+            "In The Market.png",
+            "In The Market(2).png",
+            "In The Name of Allah.png",
+            "Kaaba.png",
+            "Landscape(1).png",
+            "Landscape(2).png",
+            "Landscape(3).png",
+            "Landscape(4).png",
+            "Landscape(5).png",
+            "Landscape(6).png",
+            "Landscape(7).png",
+            "Limbo.png",
+            "LOLO Bird.png",
+            "Min AlMahd.png",
+            "Mommy and Son.png",
+            "Motherhood.png",
+            "Mountain Houses.png",
+            "My Friend.png",
+            "National Day Celebrations.png",
+            "Noon Letter.png",
+            "On The Sea Beach.png",
+            "Oyster Split.png",
+            "Part of The BullHead Statue.png",
+            "Pottery Vase.png",
+            "Predation_.png",
+            "Predatory Drawings.png",
+            "Predatory Drawings(2).png",
+            "Predatory Drawings(3).png",
+            "Preparing For Fishing.png",
+            "Rashed's Mother.png",
+            "Rocks.png",
+            "Safi Fish.png",
+            "Sea View_.png",
+            "Sheikh Abdulaziz Bin Mohammed.png",
+            "Shipbuilder.png",
+            "Shipbuilder Night.png",
+            "Side Portrait.png",
+            "Statue Design(2).png",
+            "Statue Design(3).png",
+            "Statue Design(4).png",
+            "Statue Design(5).png",
+            "Statue Design(6).png",
+            "Statue Design(7).png",
+            "Statue Design.png",
+            "Still Life.png",
+            "Tara Logo Desgin.png",
+            "Tarab Session.png",
+            "Tarab Session(2).png",
+            "The Two Friends.png",
+            "The Banoosh Night.png",
+            "The Banoosh(1).png",
+            "The Banoosh(2).png",
+            "The Banoosh(3).png",
+            "The Banoosh(4).png",
+            "The Birds.png",
+            "The Boat on The Beach.png",
+            "The Boat.png",
+            "The Boats.png",
+            "The Boats(2).png",
+            "The Boats(3).png",
+            "The Boy Abstract.png",
+            "The Camel Racing.png",
+            "The Camel.png",
+            "The Captive.png",
+            "The Carrier.png",
+            "The Castle.png",
+            "The Church.png",
+            "Thanks Be To Allah.png",
+            "The Clown.png",
+            "The Cock.png",
+            "The Coffee Dallah_.png",
+            "The confused girl.png",
+            "The Convoy.png",
+            "The Couple.png",
+            "The Diver.png",
+            "The Diver Guidence.png",
+            "The Falcon Head.png",
+            "The Falcon statue.png",
+            "The Falcon.png",
+            "The Family.png",
+            "The Farm.png",
+            "The Farm(2).png",
+            "The Faskara and Shere Fish.png",
+            "The Fish Trap.png",
+            "The Fish Trap(2).png",
+            "The Flying Falcon.png",
+            "The Foreign Horse.png",
+            "The Friends.png",
+            "The Funeral.png",
+            "The Gergaoon Play.png",
+            "The Green Grocer.png",
+            "The Grocer items.png",
+            "The Holy Quran Teacher.png",
+            "The Horse Head.png",
+            "The Houbara and The Falcon.png",
+            "The Jalboot Pulling.png",
+            "The Landscape(2).png",
+            "The Last Painting.png",
+            "The Lead.png",
+            "The Little Girl.png",
+            "The Lizard(1).png",
+            "The Lizard(2).png",
+            "The Lizard(3).png",
+            "The Lizard(4).png",
+            "The Lizard(5).png",
+            "The Luan(Zrnoog).png",
+            "The Man and The Camel.png",
+            "The March of Life.png",
+            "The meditating girl.png",
+            "The Mosque(1).png",
+            "The Mosque(2).png",
+            "The Newborn.png",
+            "The Oasis Ruins.png",
+            "The Old Door.png",
+            "The Old Lady at Night.png",
+            "The Prey.png",
+            "The Principal and The Student.png",
+            "The Principal and The Teacher.png",
+            "The Principal and The Teachers.png",
+            "The Sadu Tent.png",
+            "The Seabed.png",
+            "The Three Fish.png",
+            "The Traffic Man.png",
+            "The Traveler_.png",
+            "The Tree.png",
+            "The Two Birds.png",
+            "The Two Men.png",
+            "The Two Women.png",
+            "The Village.png",
+            "The Village(2).png",
+            "The War.png",
+            "The Water Stream(AlSaab).png",
+            "The Women and The Old Man.png",
+            "The Women.png",
+            "Things.png",
+            "Woman Portrait_.png",
+            "Women.png",
+            "Worries.png",
+            "Ya Jarheni.png",
+        
+];
+            
+        
+        imageNames.forEach((fileName) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'gallery-item';
+            
+            const img = document.createElement('img');
+            img.src = `${folderPath}${fileName}`; 
+            img.alt = `Rashed Swar Artwork - ${fileName}`;
+            img.className = 'artwork';
+
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                const fontSize = Math.max(36, canvas.width * 0.03);
+                ctx.font = `${fontSize}px "Segoe UI", sans-serif`;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+
+                ctx.save(); 
+
+
+                ctx.translate(canvas.width / 2, canvas.height / 2);
+
+
+                ctx.rotate(-Math.PI / 4);
+
+
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+                ctx.shadowBlur = 6;
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+                ctx.fillText(watermarkText, 0, 0);
+
+
+                ctx.restore();
+
+                img.src = canvas.toDataURL('image/jpeg', 0.92); 
+                img.classList.add('watermarked');
+
+                
+                img.onload = null; 
+            };
+
+            itemDiv.appendChild(img);
+            galleryContainer.appendChild(itemDiv);
+        });
+
+    </script>
+</body>
+</html>
